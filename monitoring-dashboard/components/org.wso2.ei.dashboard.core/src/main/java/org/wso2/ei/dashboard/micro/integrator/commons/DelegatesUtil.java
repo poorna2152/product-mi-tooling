@@ -73,10 +73,12 @@ public class DelegatesUtil {
 
         for (String nodeId: nodeList) {
             String mgtApiUrl = ManagementApiUtils.getMgtApiUrl(groupId, nodeId);
+            logger.info("management api url: " + mgtApiUrl);
             String accessToken = DATA_MANAGER.getAccessToken(groupId, nodeId);
 
             JsonArray artifactList = getResourceResultList(groupId, nodeId, artifactType,
                 mgtApiUrl, accessToken, searchKey);
+            logger.info("artifactList: " + artifactList.toString());
 
             for (JsonElement jsonElement : artifactList) {
                 JsonObject artifact = (JsonObject) jsonElement;
@@ -269,11 +271,11 @@ public class DelegatesUtil {
      */
     public static void logDebugLogs(String artifactType, String groupId, String lowerLimit, String upperLimit,
                                     String order, String orderBy, String isUpdate) {
-        if (logger.isDebugEnabled()) {
-            logger.debug("Fetching Searched " + artifactType + " from MI.");
-            logger.debug("group id :" + groupId + ", lower limit :" + lowerLimit + ", upper limit: " + upperLimit);
-            logger.debug("Order:" + order + ", OrderBy:" + orderBy + ", isUpdate:" + isUpdate);
-        }
+        // if (logger.isDebugEnabled()) {
+            logger.info("Fetching Searched " + artifactType + " from MI.");
+            logger.info("group id :" + groupId + ", lower limit :" + lowerLimit + ", upper limit: " + upperLimit);
+            logger.info("Order:" + order + ", OrderBy:" + orderBy + ", isUpdate:" + isUpdate);
+        // }
     }
 
     /**

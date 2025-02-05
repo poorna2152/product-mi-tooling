@@ -306,6 +306,7 @@ public class Utils {
             default:
                 throw new DashboardServerException("Artifact type " + artifactType + " is invalid.");
         }
+        logger.info("artifactUrl: " + getArtifactDetailsUrl);
         return getArtifactDetailsUrl;
     }
 
