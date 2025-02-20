@@ -51,6 +51,7 @@ import static org.wso2.ei.dashboard.core.commons.Constants.MESSAGE_STORES;
 import static org.wso2.ei.dashboard.core.commons.Constants.PROXY_SERVICES;
 import static org.wso2.ei.dashboard.core.commons.Constants.SEQUENCES;
 import static org.wso2.ei.dashboard.core.commons.Constants.SERVICES;
+import static org.wso2.ei.dashboard.core.commons.Constants.SOURCES;
 import static org.wso2.ei.dashboard.core.commons.Constants.TASKS;
 import static org.wso2.ei.dashboard.core.commons.Constants.TEMPLATES;
 
@@ -302,6 +303,9 @@ public class Utils {
             case DATA_SERVICES:
                 getArtifactDetailsUrl = mgtApiUrl.concat(DATA_SERVICES).concat("?dataServiceName=")
                                                  .concat(artifactName);
+                break;
+            case SOURCES:
+                getArtifactDetailsUrl = mgtApiUrl.concat(artifactName).concat(SOURCES);
                 break;
             default:
                 throw new DashboardServerException("Artifact type " + artifactType + " is invalid.");

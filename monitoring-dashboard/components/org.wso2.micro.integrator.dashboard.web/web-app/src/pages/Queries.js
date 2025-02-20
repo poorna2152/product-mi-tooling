@@ -21,16 +21,14 @@
 import React from 'react';
 import EnhancedTable from '../commons/EnhancedTable';
 
-export default function Listeners() {
+export default function Queries() {
     const [pageInfo] = React.useState({
-        pageId: "listeners",
-        title: "Listeners",
+        pageId: "queries",
+        title: "Queries",
         headCells: [
-            {id: 'name', label: 'Listener Name'},
+            {id: 'name', label: 'Stream Name'},
             {id: 'appName', label: 'Application Name'},
-            {id: 'nodes', label: 'Nodes'},
-            {id: 'protocol', label: 'Protocol'},
-            {id: 'port', label: 'Port'},
+            {id: 'nodes', label: 'Nodes'}
         ],
         tableOrderBy: 'name'
     });

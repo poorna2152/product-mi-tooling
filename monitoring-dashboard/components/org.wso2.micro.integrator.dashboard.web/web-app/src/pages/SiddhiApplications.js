@@ -21,18 +21,17 @@
 import React from 'react';
 import EnhancedTable from '../commons/EnhancedTable';
 
-export default function Listeners() {
+export default function SiddhiApplications() {
     const [pageInfo] = React.useState({
-        pageId: "listeners",
-        title: "Listeners",
+        pageId: "siddhiapps",
+        title: "Siddhi Applications",
         headCells: [
-            {id: 'name', label: 'Listener Name'},
-            {id: 'appName', label: 'Application Name'},
+            {id: 'name', label: 'Siddhi Application'},
             {id: 'nodes', label: 'Nodes'},
-            {id: 'protocol', label: 'Protocol'},
-            {id: 'port', label: 'Port'},
+            {id: 'status', label: 'Active / Faulty'}
         ],
         tableOrderBy: 'name'
     });
     return <EnhancedTable pageInfo={pageInfo}/>
 }
+

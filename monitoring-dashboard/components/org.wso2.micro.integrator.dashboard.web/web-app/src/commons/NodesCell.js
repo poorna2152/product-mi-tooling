@@ -30,6 +30,11 @@ import ApiSideDrawer from './sideDrawers/ApiSideDrawer';
 import TemplatesSideDrawer from './sideDrawers/TemplatesSideDrawer';
 import SequenceSideDrawer from './sideDrawers/SequenceSideDrawer';
 import InboundEpSideDrawer from './sideDrawers/InboundEpSideDrawer';
+import QuerySideDrawer from './sideDrawers/QuerySideDrawer';
+import WindowSideDrawer from './sideDrawers/WindowSideDrawer';
+import SinkSideDrawer from './sideDrawers/SinkSideDrawer';
+import SourceSideDrawer from './sideDrawers/SourceSideDrawer';
+import StoreSideDrawer from './sideDrawers/StoreSideDrawer';
 import MessageStoreSideDrawer from './sideDrawers/MessageStoreSideDrawer';
 import MessageProcessorSideDrawer from './sideDrawers/MessageProcessorSideDrawer';
 import TasksSideDrawer from './sideDrawers/TasksSideDrawer';
@@ -38,6 +43,7 @@ import CarbonApplicationsSideDrawer from './sideDrawers/CarbonApplicationsSideDr
 import DataServicesSideDrawer from './sideDrawers/DataServicesSideDrawer';
 import DataSourcesSideDrawer from './sideDrawers/DataSourcesSideDrawer';
 import GenericDrawer from './sideDrawers/GenericDrawer';
+import SiddhiApplicationSideDrawer from './sideDrawers/SiddhiApplicationSideDrawer';
 
 export default function NodesCell(props) {
     const classes = useStyles();
@@ -93,6 +99,16 @@ function SideDrawer(props) {
             return <DataSourcesSideDrawer nodeData={nodeData} />
         case 'nodesPage':
             return <HomePageSideDrawer nodeData={nodeData} />
+        case 'queries':
+            return <QuerySideDrawer nodeData={nodeData} retrieveUpdatedArtifact={retrieveUpdatedArtifact}/>
+        case 'siddhiapps':
+            return <SiddhiApplicationSideDrawer nodeData={nodeData} retrieveUpdatedArtifact={retrieveUpdatedArtifact}/>
+        // case 'sinks':
+        //     return <SinkSideDrawer nodeData={nodeData} retrieveUpdatedArtifact={retrieveUpdatedArtifact}/>
+        // case 'stores':
+        //     return <StoreSideDrawer nodeData={nodeData} retrieveUpdatedArtifact={retrieveUpdatedArtifact}/>
+        // case 'windows':
+        //     return <WindowSideDrawer nodeData={nodeData} retrieveUpdatedArtifact={retrieveUpdatedArtifact}/>
         default :
             return <GenericDrawer nodeData={nodeData} />
     }
